@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f2e7">
+  <meta name="description" content="一幅用 JavaScript Canvas 繪製的互動草原派對插畫。">
+  <title>草原派對 · Grassland Jam</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="canvas.js" defer></script>
+</head>
+<body>
+  <main class="page">
+    <header class="cover">
+      <div>
+        <p class="edition"><i aria-hidden="true"></i> GRASSLAND JAM</p>
+        <h1>草原派對<span aria-hidden="true">✳</span></h1>
+      </div>
+      <p class="intro">太陽快下山了，草原上的朋友才剛開始跳舞。</p>
+    </header>
+
+    <figure class="spread">
+      <div class="stage" id="stage">
+        <canvas id="scene" aria-label="夕陽下的草原，大象、長頸鹿、獅子、斑馬和其他動物圍著音樂起舞。">
+          夕陽下的草原上，大象、長頸鹿、獅子、斑馬和其他動物正在開派對。
+        </canvas>
+        <div class="critters" id="critters" aria-label="派對上的動物"></div>
+        <output class="speech" id="speech" hidden></output>
+      </div>
+      <figcaption class="ribbon">
+        <div class="hint">
+          <span class="hand" aria-hidden="true">↗</span>
+          <span>點一點動物，看看牠的派對招式。</span>
+        </div>
+        <div class="controls">
+          <button type="button" id="sound" class="sound" aria-pressed="false">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M11 5 6 9H3v6h3l5 4V5Z"></path>
+              <path class="muted-mark" d="m16 10 5 5m0-5-5 5"></path>
+              <path class="sound-mark" d="M16 9a4 4 0 0 1 0 6m3-9a8 8 0 0 1 0 12"></path>
+            </svg>
+            <span>開啟音樂</span>
+          </button>
+          <button type="button" id="dance" class="dance" aria-pressed="false">
+            <svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path class="play-mark" d="m8 5 10 6-10 6V5Z"></path>
+              <path class="pause-mark" d="M8 6v10m6-10v10"></path>
+            </svg>
+            <span>一起跳舞</span>
+          </button>
+        </div>
+      </figcaption>
+    </figure>
+  </main>
+</body>
+</html>

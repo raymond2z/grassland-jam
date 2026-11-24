@@ -1,0 +1,124 @@
+:root {
+  color-scheme: light;
+  font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
+  color: #343929;
+  background: #f7f2e7;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-width: 280px;
+  background: radial-gradient(ellipse at 45% 8%, #fffaf0 0%, transparent 72%), #f7f2e7;
+}
+.page { width: min(1240px, calc(100% - 96px)); margin: 0 auto; padding: 35px 0 30px; }
+.cover { display: flex; justify-content: space-between; align-items: end; gap: 18px; margin-bottom: 20px; }
+.edition {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 10px 2px;
+  font: 700 12px/1.2 ui-monospace, "Courier New", monospace;
+  letter-spacing: .22em;
+  color: #606745;
+}
+.edition i {
+  display: block;
+  width: 17px;
+  height: 11px;
+  background: #9a633a;
+  border-radius: 80% 2% 80% 0;
+  transform: rotate(-24deg);
+}
+h1 {
+  margin: 0;
+  color: #303825;
+  font-family: "Noto Serif TC", "Songti TC", "PMingLiU", "AR PL UMing TW", serif;
+  font-size: clamp(3rem, 5.1vw, 5rem);
+  font-weight: 900;
+  letter-spacing: .015em;
+  line-height: 1.02;
+}
+h1 span {
+  display: inline-block;
+  margin-left: .38em;
+  transform: rotate(-14deg) translateY(-.7em);
+  color: #ab603f;
+  font-size: .31em;
+}
+.intro { margin: 0 3px 5px 0; font-size: .93rem; line-height: 1.65; color: #596043; }
+.spread {
+  margin: 0;
+  padding: 8px 8px 0;
+  border: 1px solid #cfc5ad;
+  background: #fffdf3;
+  border-radius: 16px;
+  box-shadow: 0 14px 40px #45381412, 0 2px 3px #45381412;
+}
+.stage { position: relative; overflow: hidden; border-radius: 10px; aspect-ratio: 1200 / 540; background: #efd6a8; isolation: isolate; }
+canvas, .critters { position: absolute; inset: 0; width: 100%; height: 100%; }
+.critter {
+  position: absolute;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  transform: translate(-50%, -100%);
+  touch-action: manipulation;
+}
+.critter:focus-visible { outline: 2px dashed #393d25; outline-offset: 2px; }
+.speech {
+  position: absolute;
+  z-index: 2;
+  transform: translate(-50%, -100%);
+  pointer-events: none;
+  color: #343929;
+  background: #fffaf0;
+  border: 1px solid #5b573c;
+  border-radius: 10px 11px 10px 3px;
+  box-shadow: 2px 3px #64533435;
+  padding: 7px 12px;
+  font-size: .84rem;
+  line-height: 1.35;
+  white-space: nowrap;
+}
+.ribbon { display: flex; align-items: center; justify-content: space-between; gap: 10px; min-height: 70px; padding: 10px 10px 10px 15px; }
+.hint { display: flex; align-items: center; gap: 8px; color: #5e6449; font-size: .88rem; }
+.hand { color: #9a5339; font-size: 1.35rem; line-height: 1; }
+.controls { display: flex; align-items: center; gap: 8px; }
+.controls button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 42px;
+  padding: 0 14px;
+  border: 1px solid #b9b395;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #415031;
+  background: #fbf8ec;
+  font: inherit;
+  font-size: .86rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.controls button:hover { background: #f0ead7; }
+.controls button:focus-visible { outline: 2px solid #82513b; outline-offset: 3px; }
+.controls .dance { background: #414c32; color: #fffaf0; border-color: #414c32; }
+.controls .dance:hover { background: #535f3c; }
+.controls svg { width: 18px; height: 18px; }
+.sound-mark, .pause-mark, [aria-pressed="true"] .muted-mark, [aria-pressed="true"] .play-mark { display: none; }
+[aria-pressed="true"] .sound-mark, [aria-pressed="true"] .pause-mark { display: inline; }
+@media (max-width: 700px) {
+  .page { width: calc(100% - 24px); padding: 25px 0 18px; }
+  .cover { flex-direction: column; align-items: start; gap: 10px; margin: 0 3px 15px; }
+  .intro { margin: 0; font-size: .85rem; }
+  .spread { padding: 5px 5px 0; border-radius: 12px; }
+  .stage { aspect-ratio: 620 / 690; border-radius: 8px; }
+  .ribbon { gap: 9px; justify-content: space-between; padding: 9px 5px; min-height: 0; flex-wrap: wrap; }
+  .hint { font-size: .78rem; }
+  .controls { margin-left: auto; }
+  .controls button { padding: 0 9px; min-height: 38px; font-size: .8rem; }
+}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; } }
